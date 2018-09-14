@@ -76,16 +76,5 @@ class _ProfilePageState extends State<HomePage> {
     )
     
     
-    
-    
-    
-    
-    
-    Row(
-      children: [
-        
-
-      ],
-    );
   }
 }
