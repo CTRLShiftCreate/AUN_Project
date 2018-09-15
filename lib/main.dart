@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
             child: Column(
             ),
           ),
-          
           HomePage(),
         ],)
     );
