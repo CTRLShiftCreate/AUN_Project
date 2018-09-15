@@ -58,8 +58,7 @@ class _ProfilePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-            Container(
+    return Container(
           padding: EdgeInsets.all(0.0),
           child: IconButton(
             icon: (_isSelected
@@ -68,7 +67,6 @@ class _ProfilePageState extends State<HomePage> {
             color: Colors.red[500],
             onPressed: _toggleSelected,
           ),
-        ),
-    );
+        );
   }
 }
