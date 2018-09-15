@@ -10,7 +10,6 @@ class MyApp extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            
             child: Column(
             ),
           ),
