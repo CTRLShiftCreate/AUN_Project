@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+
       home: Scaffold(
         appBar: AppBar(
             title: Title(
@@ -58,11 +59,7 @@ class _ProfilePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-
-      ),
-            Container(
+    return Container(
           padding: EdgeInsets.all(0.0),
           child: IconButton(
             icon: (_isSelected
