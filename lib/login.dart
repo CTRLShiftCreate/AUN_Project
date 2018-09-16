@@ -19,10 +19,9 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget>[
                   Image.asset("images/aunlogo.png"),
                   SizedBox(height: 16.0),
-                  Text("AUN Portal"),
                 ],
               ),
-              SizedBox(height: 120.0),
+              SizedBox(height: 50.0),
               //TODO: Wrap Username with AccentColorOverride
               //TODO: Remove filled: true values
               //TODO: Wrap Password with AccentColorOverride
@@ -35,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               // spacer
-              SizedBox(height: 12.0),
+              SizedBox(height: 10.0),
               // [Password]
               TextField(
                 decoration: InputDecoration(
