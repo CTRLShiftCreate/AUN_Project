@@ -68,10 +68,6 @@ class _ProfilePageState extends State<HomePage> {
             color: Colors.red[500],
             onPressed: _toggleSelected,
           ),
-        ),
-
-    )
-    
-    
+        );
   }
 }
