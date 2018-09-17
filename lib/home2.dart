@@ -6,7 +6,7 @@ import 'messages.dart';
 
 class HomePage extends StatelessWidget {
   //TODO: Make a collection of cards
-  List<Card> _buildGridCards(BuildContext context) {
+  List<Card> _buildListCards(BuildContext context) {
     List<Message> messages =
         MessagesRepository.loadMessages(Category.notification);
 
@@ -25,35 +25,26 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             //Make the cards a ListView
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                child: Column(
-                  //TODO: Align labels to the bottom and center
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    //TODO: Handle overflowing labels
-                    Text(
-                      message == null ? "" : message.name,
-                      style: theme.textTheme.button,
-                      softWrap: false,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                    ),
-                    SizedBox(height: 8.0),
-                    Text(
-                      message == null ? "" : message.text,
-                      style: theme.textTheme.caption,
-                    ),
+            ListTile(
+              title: Text(
+                        message == null ? "" : message.name,
+                        style: theme.textTheme.button,
+                        softWrap: false,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+              subtitle: Text(
+                        message == null ? "" : message.text,
+                        style: theme.textTheme.caption,
+                      ),
+                    )
                   ],
                 ),
-              ),
-            ),
-          ],
-        ),
-      );
-    }).toList();
+            );
+          }
+        );
+      }
+    }
     /* (int index) => Card(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +67,6 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ), */
-  }
 
   //TODO: Add a variable for Category
   @override
@@ -120,12 +110,21 @@ class HomePage extends StatelessWidget {
         ],
       ),
       //TODO: Add a grid view
-      body: GridView.count(
-          crossAxisCount: 2,
+      body: Padding(
           padding: EdgeInsets.all(8.0),
-          childAspectRatio: 8.0 / 10.0,
-          //TODO: Build a grid of cards
-          children: _buildGridCards(context)),
+          child: getHomePageBody(context)),
     );
   }
-}
+  final List<Message> allMessages = allMessages;
+
+  getHomePageBody(BuildContext context) {
+    return ListView.builder(
+      itemCount: allMessages.length,
+      itemBuilder: _getMessages,
+      padding: EdgeInsets.all(0.0),
+    );
+  }
+
+  Widget _getMessages(BuildContext context, int index) {
+    return Text(allMessages[index].name);
+  }
