@@ -42,7 +42,9 @@ flutter:
     - images/
     - assets/aun_logo.jpeg
     - assets/aunlogo.png
+
   uses-material-design: true
+  
   fonts:
     - family: Rubik
       #fonts:
