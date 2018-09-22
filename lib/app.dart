@@ -4,22 +4,53 @@ import 'home.dart';
 import 'login.dart';
 
 import 'colors.dart';
+
+import 'backdrop.dart';
+import 'messages.dart';
+
+import "package:aun_project/portal_menu_page.dart";
+
 //import 'cut_corners_border.dart';
 
 //TODO: Convert to Stateful Widget
-class AunPortal extends StatelessWidget {
+class AunPortal extends StatefulWidget {
 
-  @override
-  Widget build(BuildContext context) {
+    @override
+    _AunPortalState createState() {
+        return new _AunPortalState();
+        }
+    }
+
+class _AunPortalState extends State<AunPortal> {
+    Category _currentCategory = Category.notification;
+
+    void _onCategoryTap(Category category) {
+        setState(() {
+                  _currentCategory = category;
+                });
+    }
+
+    @override
+    Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "AUN Portal",
       theme: _aunTheme,
       //TODO: Change home: to a Backdrop with a HomePage frontLayer
-      home: HomePage(),
-      //TODO: Make currentCategory field take _currentCategory
-      //TODO: Pass _currentCategory for frontLayer
-      //TODO: Change backLayer field value to CategoryMenuPage
+      home: Backdrop(
+          //TODO: Make currentCategory field take _currentCategory
+          currentCategory: _currentCategory,
+          //TODO: Pass _currentCategory for frontLayer
+          frontLayer: HomePage(category: _currentCategory,),
+          //TODO: Change backLayer field value to CategoryMenuPage
+          backLayer: CategoryMenuPage(
+              currentCategory: _currentCategory,
+              onCategoryTap: _onCategoryTap,
+          ),
+          frontTitle: Text("AUN Portal"),
+          backTitle: Text("MENU"),
+      ),
+      
       initialRoute: "/login",
       onGenerateRoute: _getRoute,
       //TODO: Add a theme
@@ -45,8 +76,8 @@ final ThemeData _aunTheme = _buildPortalTheme();
 ThemeData _buildPortalTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
-    accentColor: aunGreenLight,
-    primaryColor: aunGreenDark,
+    accentColor: aunBlueDark,
+    primaryColor: aunBlueLight,
     buttonColor: aunBlueLight,
     scaffoldBackgroundColor: aunBackgroundWhiteDark,
     cardColor: aunBackgroundWhite,
@@ -77,16 +108,17 @@ TextTheme _buildPortalTextTheme(TextTheme base) {
   return base.copyWith(
     headline: base.headline.copyWith(
       fontWeight: FontWeight.w500,
+      decorationColor: aunBackgroundWhite,
     ),
     title: base.title.copyWith(
-      fontSize: 18.0
+      fontSize: 18.0,
+      
     ),
     caption: base.caption.copyWith(
       fontWeight: FontWeight.w400,
       fontSize: 14.0,
     ),
   ).apply(
-    fontFamily: "Rubik",
     displayColor: aunBlueDark,
     bodyColor: aunBlackDark,
   );

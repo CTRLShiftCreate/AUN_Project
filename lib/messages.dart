@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-enum Category { notification, announcement, update, }
+enum Category { all, notification, announcement, update, }
 
 class Message {
   const Message({

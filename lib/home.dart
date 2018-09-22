@@ -6,9 +6,13 @@ import 'messages.dart';
 
 class HomePage extends StatelessWidget {
   //TODO: Make a collection of cards
+  final Category category;
+
+  const HomePage({this.category: Category.all});
+
   List<Card> _buildGridCards(BuildContext context) {
     List<Message> messages =
-        MessagesRepository.loadMessages(Category.notification);
+        MessagesRepository.loadMessages(category);
 
     if (messages == null || messages.isEmpty) {
       return const <Card>[]; //Make it show there are no new notifications
@@ -84,7 +88,7 @@ class HomePage extends StatelessWidget {
     //TODO: Return an AsymmetricView
     //TODO: Pass Category variable to AsymmetricView
     return Scaffold(
-      //TODO: Add app bar
+      /* //TODO: Add app bar
       appBar: AppBar(
         // TODO: Add buttons and title
         leading: IconButton(
@@ -118,7 +122,7 @@ class HomePage extends StatelessWidget {
             },
           ),
         ],
-      ),
+      ), */
       //TODO: Add a grid view
       body: GridView.count(
           crossAxisCount: 2,
