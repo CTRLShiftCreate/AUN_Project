@@ -8,6 +8,7 @@ import 'colors.dart';
 import 'backdrop.dart';
 import 'messages.dart';
 
+
 import "package:aun_project/portal_menu_page.dart";
 
 //import 'cut_corners_border.dart';
@@ -22,7 +23,7 @@ class AunPortal extends StatefulWidget {
     }
 
 class _AunPortalState extends State<AunPortal> {
-    Category _currentCategory = Category.notification;
+    Category _currentCategory = Category.all;
 
     void _onCategoryTap(Category category) {
         setState(() {
@@ -36,6 +37,7 @@ class _AunPortalState extends State<AunPortal> {
       debugShowCheckedModeBanner: false,
       title: "AUN Portal",
       theme: _aunTheme,
+      
       //TODO: Change home: to a Backdrop with a HomePage frontLayer
       home: Backdrop(
           //TODO: Make currentCategory field take _currentCategory
@@ -80,7 +82,7 @@ ThemeData _buildPortalTheme() {
     primaryColor: aunBlueLight,
     buttonColor: aunBlueLight,
     scaffoldBackgroundColor: aunBackgroundWhiteDark,
-    cardColor: aunBackgroundWhite,
+    cardColor: aunGreenDark,
     textSelectionColor: aunBlueLight,
     errorColor: aunRedDark,
 
@@ -91,7 +93,7 @@ ThemeData _buildPortalTheme() {
 
     //TODO: Add the icon themes
     primaryIconTheme: base.iconTheme.copyWith(
-      color: aunBlueDark
+      color: aunBackgroundWhite
     ),
 
     //TODO: Decorate the inputs
@@ -112,7 +114,7 @@ TextTheme _buildPortalTextTheme(TextTheme base) {
     ),
     title: base.title.copyWith(
       fontSize: 18.0,
-      
+           
     ),
     caption: base.caption.copyWith(
       fontWeight: FontWeight.w400,
@@ -120,6 +122,6 @@ TextTheme _buildPortalTextTheme(TextTheme base) {
     ),
   ).apply(
     displayColor: aunBlueDark,
-    bodyColor: aunBlackDark,
+    bodyColor: aunBackgroundWhiteDark,
   );
 }

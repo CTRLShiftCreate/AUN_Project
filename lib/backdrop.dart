@@ -172,7 +172,7 @@ class _BackdropState extends State<Backdrop>
                     //TODO: Add shortcut to login screen from trailing icons
                     IconButton(
                         icon: Icon(
-                            Icons.search,
+                            Icons.tune,
                             semanticLabel: "search",
                         ),
                         onPressed: () {
