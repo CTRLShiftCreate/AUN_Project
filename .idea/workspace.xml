@@ -70,6 +70,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="Salim Hussaini &lt;salimabdu008@gmail.com&gt;" />
         <option value="OmegaDracul &lt;salimabdu008@gmail.com&gt;" />
       </list>
     </option>
@@ -259,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1537580677843</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Huge Progress has been made">
+      <created>1537580706827</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1537580706827</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
