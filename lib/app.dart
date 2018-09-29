@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'navigation.dart';
 
-import 'home.dart';
+/* import 'home.dart'; */
 import 'login.dart';
 
-import 'colors.dart';
+import 'supplemental/colors.dart';
 
-import 'backdrop.dart';
-import 'messages.dart';
+/* import 'backdrop.dart'; */
+/* import 'messages.dart'; */
 
-
-import "package:aun_project/portal_menu_page.dart";
+/* import "package:aun_project/portal_menu_page.dart"; */
 
 //import 'cut_corners_border.dart';
 
@@ -23,13 +23,13 @@ class AunPortal extends StatefulWidget {
     }
 
 class _AunPortalState extends State<AunPortal> {
-    Category _currentCategory = Category.all;
+   /*  Category _currentCategory = Category.all;
 
     void _onCategoryTap(Category category) {
         setState(() {
                   _currentCategory = category;
                 });
-    }
+    } */
 
     @override
     Widget build(BuildContext context) {
@@ -39,11 +39,11 @@ class _AunPortalState extends State<AunPortal> {
       theme: _aunTheme,
       
       //TODO: Change home: to a Backdrop with a HomePage frontLayer
-      home: Backdrop(
+      home: NavigationBar(),/* Backdrop(
           //TODO: Make currentCategory field take _currentCategory
           currentCategory: _currentCategory,
           //TODO: Pass _currentCategory for frontLayer
-          frontLayer: HomePage(category: _currentCategory,),
+          frontLayer: NavigationBar(),
           //TODO: Change backLayer field value to CategoryMenuPage
           backLayer: CategoryMenuPage(
               currentCategory: _currentCategory,
@@ -51,7 +51,7 @@ class _AunPortalState extends State<AunPortal> {
           ),
           frontTitle: Text("AUN Portal"),
           backTitle: Text("MENU"),
-      ),
+      ), */
       
       initialRoute: "/login",
       onGenerateRoute: _getRoute,

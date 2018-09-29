@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 import "messages.dart";
-import 'login.dart';
+import "package:aun_project/login.dart";
 
 //TODO: Add Velocity constant;
 const double _kFlingVelocity = 2.0;
@@ -173,7 +173,7 @@ class _BackdropState extends State<Backdrop>
                     IconButton(
                         icon: Icon(
                             Icons.tune,
-                            semanticLabel: "search",
+                            semanticLabel: "filter",
                         ),
                         onPressed: () {
                             //TODO: Text search

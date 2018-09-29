@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 //import 'package:intl/intl.dart';
 
-import "messages_repository.dart";
-import 'messages.dart';
+import "supplemental/messages_repository.dart";
+import 'supplemental/messages.dart';
+/* import 'backdrop.dart';
 import 'colors.dart';
 
-import 'placeholder_widget.dart';
+import 'placeholder_widget.dart'; */
 
 class HomePage extends StatefulWidget {
   //TODO: Make a collection of cards
@@ -20,42 +21,40 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _currentIndex = 0;
-  final List<Widget> _children = [
-    PlaceholderWidget(Colors.white),
-    PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.blue),
-    PlaceholderWidget(Colors.green),
-    PlaceholderWidget(Colors.purple),
-  ];
+  //int _currentIndex = 0;
+/* 
+  Category _currentCategory = Category.all;
 
-  List<Card> _buildGridCards(BuildContext context) {
-    List<Message> messages = MessagesRepository.loadMessages(widget.category);
+    void _onCategoryTap(Category category) {
+        setState(() {
+                  _currentCategory = category;
+                });
+    }
+  
+ */
+  List<Card> _buildListItem(BuildContext context) {
+    final List<Message> _messages =
+        MessagesRepository.loadMessages(widget.category);
 
-    if (messages == null || messages.isEmpty) {
-      return const <Card>[]; //Make it show there are no new notifications
+    if (_messages == null || _messages.isEmpty) {
+      return const <Card>[];
     }
 
     final ThemeData theme = Theme.of(context);
 
-    return messages.map((message) {
+    return _messages.map((message) {
       return Card(
-        //TODO: Adjust card heights
         elevation: 1.0,
         child: Column(
-          //TODO: Center items on the card
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            //Make the cards a ListView
             Expanded(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
                 child: Column(
-                  //TODO: Align labels to the bottom and center
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    //TODO: Handle overflowing labels
                     Text(
                       message == null ? "" : message.name,
                       style: theme.textTheme.button,
@@ -63,7 +62,9 @@ class _HomePageState extends State<HomePage> {
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                     ),
-                    SizedBox(height: 8.0),
+                    SizedBox(
+                      height: 8.0,
+                    ),
                     Text(
                       message == null ? "" : message.text,
                       style: theme.textTheme.caption,
@@ -71,7 +72,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-            ),
+            )
           ],
         ),
       );
@@ -102,65 +103,41 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    /* var _children = [
+        Container(child: Expanded(
+                    child: Container(
+                    child: GridView.count(
+                        crossAxisCount: 2,
+                        padding: EdgeInsets.all(8.0),
+                        childAspectRatio: 8.0 / 10.0,
+                        //TODO: Build a grid of cards
+                        children: _buildListItem(context)),
+                    ),
+                ),),
+        PlaceholderWidget(Colors.blue),
+        PlaceholderWidget(Colors.green),
+        PlaceholderWidget(Colors.purple),
+        PlaceholderWidget(Colors.white), */
+    //];
     return Scaffold(
-      //TODO: Add a grid view
-      bottomNavigationBar: Theme(
-        data: Theme.of(context).copyWith(
-          //sets the background color of the bottom navigation bar
-          canvasColor: aunBlueLight,
-          //Sets the active color of the BottomNavigationBar
-          primaryColor: Colors.black,
-        ),
-        child: BottomNavigationBar(
-          onTap: onTabTapped,
-          currentIndex: _currentIndex, //This is be set when a new tab is tapped
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              title: Text("Home"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_box),
-              title: Text("OpenERP"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.assignment),
-              title: Text("Canvas"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.library_books),
-              title: Text("E-Library"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.email),
-              title: Text("Mail"),
-            ),
-          ],
-        ),
+      appBar: AppBar(
+        title: Text("AUN Portal"),
       ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              child: GridView.count(
-                  crossAxisCount: 2,
-                  padding: EdgeInsets.all(8.0),
-                  childAspectRatio: 8.0 / 10.0,
-                  //TODO: Build a grid of cards
-                  children: _buildGridCards(context)),
-            ),
-          ),
-          Container(
-            child: _children[_currentIndex],
-          ),
-        ],
+      body: Container(
+        child: GridView.count(
+          crossAxisCount: 2,
+          padding: EdgeInsets.all(8.0),
+          childAspectRatio: 8.0 / 10.0,
+          //TODO: Build a grid of cards
+          children: _buildListItem(context),
+        ),
       ),
     );
   }
 
-  void onTabTapped(int index) {
+  /* void onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
     });
-  }
+  } */
 }
