@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'listView.dart';
+//import "supplemental/messages.dart";
+
 //import 'package:intl/intl.dart';
 
-import "supplemental/messages_repository.dart";
-import 'supplemental/messages.dart';
-/* import 'backdrop.dart';
-import 'colors.dart';
+//import "supplemental/messages_repository.dart";
+//import 'supplemental/messages.dart';
+ //import 'backdrop.dart';
+//import 'colors.dart';
 
-import 'placeholder_widget.dart'; */
+//import 'placeholder_widget.dart';
 
 class HomePage extends StatefulWidget {
-  //TODO: Make a collection of cards
-  final Category category;
+  final Title title;
 
-  const HomePage({this.category: Category.all});
+  const HomePage({this.title});
 
   @override
   _HomePageState createState() {
@@ -32,7 +34,11 @@ class _HomePageState extends State<HomePage> {
     }
   
  */
-  List<Card> _buildListItem(BuildContext context) {
+    /*The Next block of code creates a card list of messages from the repository
+    and then categorises them.
+    The categories will be used for filtering messages later on */
+  
+  /* List<Card> _buildListItem(BuildContext context) {
     final List<Message> _messages =
         MessagesRepository.loadMessages(widget.category);
 
@@ -99,7 +105,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ), */
-  }
+  //} */
 
   @override
   Widget build(BuildContext context) {
@@ -123,15 +129,14 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text("AUN Portal"),
       ),
-      body: Container(
-        child: GridView.count(
+      body: MessageList()
+        /* GridView.count(
           crossAxisCount: 2,
           padding: EdgeInsets.all(8.0),
           childAspectRatio: 8.0 / 10.0,
-          //TODO: Build a grid of cards
-          children: _buildListItem(context),
-        ),
-      ),
+          //Building a grid of cards
+          //TODO: Convert the GridView to a LIstView will swippable and taggable widgets
+          children: _buildListItem(context) */,
     );
   }
 

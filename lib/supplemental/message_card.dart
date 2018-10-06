@@ -24,7 +24,7 @@ class MessageCard extends StatelessWidget {
                         children: <Widget>[
                             //TODO: Make headline6 when available
                             Text(
-                                message == null ? "" : message.name,
+                                message == null ? "" : message.title,
                                 style: theme.textTheme.button,
                                 softWrap: false,
                                 overflow: TextOverflow.ellipsis,

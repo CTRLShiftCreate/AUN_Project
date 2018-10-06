@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
 import 'colors.dart';
-import 'messages.dart';
+import 'messages.dart'; */
 
-class CategoryMenuPage extends StatelessWidget {
+/* This block of code tries to filter the messages from the repository
+    based on the categories they belong to*/
+
+/* class CategoryMenuPage extends StatelessWidget {
     final Category currentCategory;
     final ValueChanged<Category> onCategoryTap;
     final List<Category> _categories = Category.values;
@@ -67,5 +70,5 @@ class CategoryMenuPage extends StatelessWidget {
             ),
         );
     }
-}
+} */
 

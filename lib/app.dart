@@ -13,7 +13,7 @@ import 'supplemental/colors.dart';
 
 //import 'cut_corners_border.dart';
 
-//TODO: Convert to Stateful Widget
+//Converts the app to a Stateful Widget
 class AunPortal extends StatefulWidget {
 
     @override
@@ -38,11 +38,11 @@ class _AunPortalState extends State<AunPortal> {
       title: "AUN Portal",
       theme: _aunTheme,
       
-      //TODO: Change home: to a Backdrop with a HomePage frontLayer
+      //Changes the Home to the NavigationBar
       home: NavigationBar(),/* Backdrop(
           //TODO: Make currentCategory field take _currentCategory
           currentCategory: _currentCategory,
-          //TODO: Pass _currentCategory for frontLayer
+          //
           frontLayer: NavigationBar(),
           //TODO: Change backLayer field value to CategoryMenuPage
           backLayer: CategoryMenuPage(
@@ -53,12 +53,12 @@ class _AunPortalState extends State<AunPortal> {
           backTitle: Text("MENU"),
       ), */
       
-      initialRoute: "/login",
+      initialRoute: "/login",       //App starts off at the login
       onGenerateRoute: _getRoute,
-      //TODO: Add a theme
     );
   }
 
+    //Define the route to the LoginPage
   Route<dynamic> _getRoute(RouteSettings settings) {
     if (settings.name != '/login') {
       return null;
@@ -72,7 +72,7 @@ class _AunPortalState extends State<AunPortal> {
   }
 }
 
-//TODO: Build Portal Theme
+//Building the AUN Portal Theme
 final ThemeData _aunTheme = _buildPortalTheme();
 
 ThemeData _buildPortalTheme() {
@@ -86,18 +86,17 @@ ThemeData _buildPortalTheme() {
     textSelectionColor: aunBlueLight,
     errorColor: aunRedDark,
 
-    //TODO: Add the text themes
+    //Adding the text themes
     textTheme: _buildPortalTextTheme(base.textTheme),
     primaryTextTheme: _buildPortalTextTheme(base.primaryTextTheme),
     accentTextTheme: _buildPortalTextTheme(base.accentTextTheme),
 
-    //TODO: Add the icon themes
+    //Adding the icon themes
     primaryIconTheme: base.iconTheme.copyWith(
       color: aunBackgroundWhite
     ),
 
-    //TODO: Decorate the inputs
-
+    //Decorating the inputs
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(),
       //border: CutCornersBorder(),
@@ -105,7 +104,7 @@ ThemeData _buildPortalTheme() {
   );
 }
 
-//TODO: Build a Portal Text Theme
+//Building a Portal Text Theme
 TextTheme _buildPortalTextTheme(TextTheme base) {
   return base.copyWith(
     headline: base.headline.copyWith(
@@ -122,6 +121,6 @@ TextTheme _buildPortalTextTheme(TextTheme base) {
     ),
   ).apply(
     displayColor: aunBlueDark,
-    bodyColor: aunBackgroundWhiteDark,
+    bodyColor: aunBlueDark,
   );
 }
