@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'supplemental/placeholder_widget.dart';
 import 'home.dart';
 import 'supplemental/colors.dart';
+import 'drawer/calendar.dart';
 //import 'canvas.dart';
 //import 'package:url_launcher/url_launcher.dart';
 
@@ -61,7 +62,9 @@ class NavigationBarState extends State<NavigationBar> {
                 title: Text("Notifications"),
                 leading: Icon(Icons.notifications_active),
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => NavigationBar()));
                 },
               ),
               //TODO: Create Navigation for AUN News
@@ -72,12 +75,14 @@ class NavigationBarState extends State<NavigationBar> {
                   Navigator.of(context).pop();
                 },
               ),
-              //TODO: Create Navigation for the Event Calender
+              //TODO: Create Navigation for the Event Calendar
               ListTile(
-                title: Text("Event Calender"),
+                title: Text("Event Calendar"),
                 leading: Icon(Icons.calendar_today),
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Calendar()));
                 },
               ),
               //TODO: Create Navigation for the Portal's Settings

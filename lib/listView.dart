@@ -30,7 +30,7 @@ class MessageListState extends State<MessageList> {
             shrinkWrap: true,
             itemCount: _messages.length,
             itemBuilder: (context, int) {
-                return MessageCard(_messages[int]);
+                return MessageCard();
             },
         );
     }

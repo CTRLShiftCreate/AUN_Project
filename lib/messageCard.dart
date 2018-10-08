@@ -3,34 +3,95 @@ import 'supplemental/messages.dart';
 //import 'supplemental/messages_repository.dart';
 
 class MessageCard extends StatefulWidget {
-  final Message message;
-
-  MessageCard(this.message);
+  MessageCard({Key key}) : super(key: key);
 
   @override
-  _MessageCardState createState() => _MessageCardState(message);
+  _MessageCardState createState() => _MessageCardState();
 }
 
 class _MessageCardState extends State<MessageCard> {
-  Message message;
 
-
-  List<Message> messages;
-
-  _MessageCardState(this.message);
+  List<Message> _messages;
 
   @override
   void initState() {
     super.initState();
-    messages = MessageRepository().getMessages();
+    _messages = MessageRepository().getMessages();
   }
 
   @override
   Widget build(BuildContext context) {
-    return messageCard;
+    return Padding(
+        padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
+        child: Column(
+          children: _messages.map((message) => _buildListRow(message)).toList(),
+    )
+    );
   }
 
-  Widget get messageCard {
+  Widget _buildListRow(Message message){
+    return Dismissible(
+        key: Key(message.id.toString()),
+        direction: DismissDirection.horizontal,
+        onDismissed: (DismissDirection direction) {
+          _delete(message);
+        },
+        background: LeaveBehindView(),
+        resizeDuration: null,
+        dismissThresholds: _dismissThresholds(),
+        child: Card(
+            color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Column(
+                children: <Widget>[
+                  ListTile(
+                    title: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(message.title),
+                    ),
+                    subtitle: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(message.text,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ));
+
+    /*Widget textSection = Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          titleRow,
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(message.text,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,),
+          )
+        ],
+      ),
+    );
+
+    return Container(
+      padding: EdgeInsets.all(8.0),
+      child: Row(
+        children: <Widget>[
+          Expanded(child: textSection)
+        ],
+      ),
+    );*/
+  }
+
+  /*Widget get messageCard {
     return Dismissible(
       key: Key(message.id.toString()),
       direction: DismissDirection.horizontal,
@@ -77,7 +138,7 @@ class _MessageCardState extends State<MessageCard> {
         ),
       ),
     );
-  }
+  }*/
 
   Map<DismissDirection, double> _dismissThresholds() {
     Map<DismissDirection, double> map = Map<DismissDirection, double>();
@@ -88,12 +149,12 @@ class _MessageCardState extends State<MessageCard> {
   void _delete(Message message) {
     MessageRepository().delete(message);
     setState(() {
-      messages = MessageRepository().getMessages();
+      _messages = MessageRepository().getMessages();
     });
   }
 }
 
-/* class LeaveBehindView extends StatelessWidget {
+ class LeaveBehindView extends StatelessWidget {
     LeaveBehindView({Key key}) : super(key : key);
 
     @override
@@ -111,7 +172,7 @@ class _MessageCardState extends State<MessageCard> {
             ),
         );
     }
-} */
+}
 
 /* class ListDisplay extends StatefulWidget{
     final Category category;
