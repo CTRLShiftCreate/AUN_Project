@@ -19,16 +19,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6190a8bc-1668-4848-a19d-022043d26f6a" name="Default" comment="1. Calender route has been created... Pending finalization&#10;2. Notification route leads back to HomePage(), not sure if to be changed&#10;3. Changed color of Cards in the messageList&#10;4.">
+    <list default="true" id="6190a8bc-1668-4848-a19d-022043d26f6a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/listView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/listView.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/messageCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/messageCard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/supplemental/messages.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/supplemental/messages.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -46,7 +39,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -76,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navigation.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="navigation.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/navigation.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1649">
-              <caret line="97" column="10" lean-forward="true" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+            <state relative-caret-position="159">
+              <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -169,8 +162,8 @@
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/drawer/calender.dart" />
         <option value="$PROJECT_DIR$/lib/drawer/calendar.dart" />
-        <option value="$PROJECT_DIR$/lib/navigation.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/navigation.dart" />
       </list>
     </option>
   </component>
@@ -200,7 +193,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -325,10 +318,17 @@
       <option name="project" value="LOCAL" />
       <updated>1538831218601</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created the Event Calendar. Fixed the orientation to portrait.">
+      <created>1539036286069</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1539036286069</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="2">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -338,30 +338,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-1" width="1368" height="770" extended-state="7" />
+    <frame x="-1" y="-1" width="1368" height="770" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.2140625" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" weight="0.32954547" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5007576" side_tool="true" weight="0.27725857" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" sideWeight="0.49924242" weight="0.317757" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3224299" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4928806" weight="0.3265625" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924242" weight="0.2765625" />
       <window_info anchor="right" id="Flutter Outline" order="5" sideWeight="0.4937304" weight="0.67045456" />
       <window_info anchor="bottom" id="Logcat" order="7" sideWeight="0.4969697" weight="0.3265625" />
-      <window_info id="Captures" order="2" weight="0.32954547" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49688473" weight="0.23779528" />
-      <window_info anchor="right" id="Color Manager" order="9" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.50311524" side_tool="true" weight="0.24090908" />
       <window_info anchor="right" id="Device File Explorer" order="6" sideWeight="0.5046729" side_tool="true" weight="0.3242424" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.396875" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.21339564" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3224299" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4928806" weight="0.3265625" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49924242" weight="0.2765625" />
+      <window_info id="Captures" order="2" weight="0.32954547" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49688473" weight="0.23779528" />
+      <window_info anchor="right" id="Color Manager" order="9" weight="0.32954547" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.32954547" />
       <window_info anchor="right" id="Flutter Inspector" order="8" sideWeight="0.49532712" weight="0.37954545" />
       <window_info anchor="right" id="Assistant" order="10" weight="0.25075758" />
@@ -373,7 +375,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -408,7 +409,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Huge Progress has been made" />
     <MESSAGE value="1. Huge Progress has been made&#10;2. Drawer has been created as well&#10;3. Removed scroll physics in the drawer" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Huge Progress has been made&#10;2. Drawer has been created as well&#10;3. Removed scroll physics in the drawer" />
+    <MESSAGE value="Created the Event Calendar. Fixed the orientation to portrait." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the Event Calendar. Fixed the orientation to portrait." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -658,20 +660,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/navigation.dart">
+    <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="10" lean-forward="true" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/main.dart">
+    <entry file="file://$PROJECT_DIR$/lib/navigation.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="159">
+          <caret line="77" column="16" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
