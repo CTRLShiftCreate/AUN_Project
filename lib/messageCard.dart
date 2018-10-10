@@ -10,7 +10,6 @@ class MessageCard extends StatefulWidget {
 }
 
 class _MessageCardState extends State<MessageCard> {
-
   List<Message> _messages;
 
   @override
@@ -25,11 +24,10 @@ class _MessageCardState extends State<MessageCard> {
         padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
         child: Column(
           children: _messages.map((message) => _buildListRow(message)).toList(),
-    )
-    );
+        ));
   }
 
-  Widget _buildListRow(Message message){
+  Widget _buildListRow(Message message) {
     return Dismissible(
         key: Key(message.id.toString()),
         direction: DismissDirection.horizontal,
@@ -40,7 +38,8 @@ class _MessageCardState extends State<MessageCard> {
         resizeDuration: null,
         dismissThresholds: _dismissThresholds(),
         child: Card(
-            color: Colors.white,
+          margin: EdgeInsets.all(1.0),
+          color: Colors.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -54,9 +53,11 @@ class _MessageCardState extends State<MessageCard> {
                     ),
                     subtitle: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(message.text,
+                      child: Text(
+                        message.text,
                         overflow: TextOverflow.ellipsis,
-                        maxLines: 1,),
+                        maxLines: 1,
+                      ),
                     ),
                   ),
                 ],
@@ -154,24 +155,24 @@ class _MessageCardState extends State<MessageCard> {
   }
 }
 
- class LeaveBehindView extends StatelessWidget {
-    LeaveBehindView({Key key}) : super(key : key);
+class LeaveBehindView extends StatelessWidget {
+  LeaveBehindView({Key key}) : super(key: key);
 
-    @override
-    Widget build(BuildContext context) {
-        return Container(
-            color: Colors.red,
-            child: Row(
-                children: <Widget>[
-                    Icon(Icons.delete),
-                    Expanded(
-                        child: Text(""),
-                    ),
-                    Icon(Icons.delete),
-                ],
-            ),
-        );
-    }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.red,
+      child: Row(
+        children: <Widget>[
+          Icon(Icons.delete),
+          Expanded(
+            child: Text(""),
+          ),
+          Icon(Icons.delete),
+        ],
+      ),
+    );
+  }
 }
 
 /* class ListDisplay extends StatefulWidget{

@@ -3,6 +3,7 @@ import 'supplemental/placeholder_widget.dart';
 import 'home.dart';
 import 'supplemental/colors.dart';
 import 'drawer/calendar.dart';
+import 'drawer/account_details.dart';
 //import 'canvas.dart';
 //import 'package:url_launcher/url_launcher.dart';
 
@@ -54,7 +55,9 @@ class NavigationBarState extends State<NavigationBar> {
                 title: Text("Account details"),
                 leading: Icon(Icons.account_circle),
                 onTap: () {
-                  Navigator.of(context).pop();
+                  Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => AccountPage()));
                 },
               ),
               //TODO: Create Navigation for the Notifications
